@@ -1,7 +1,7 @@
 Code.require_file "test_helper.exs", __DIR__
 
 
-defmodule Chapter6 do
+defmodule Chapter6Test do
   use ExUnit.Case, async: true
 
   test "it triples number" do

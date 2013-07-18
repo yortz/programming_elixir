@@ -3,7 +3,7 @@ defmodule Chapter6 do
     def double(n), do: n * 2
 
     def triple(n), do: n * 3
-    
+
     def quadruple(n), do: double(n) * 2
 
     def sum(0), do: 0
