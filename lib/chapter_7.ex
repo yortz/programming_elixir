@@ -19,4 +19,13 @@ defmodule Chapter7 do
 
   def each([], _func), do: []
   def each([head|tail], func), do: [ func.(head) | each(tail, func) ]
+
+  def all?([], _func), do: true
+  def all?([head|tail], func) do
+    if func.(head) do
+      all?(tail, func)
+    else
+      false
+    end
+  end
 end

@@ -23,4 +23,9 @@ defmodule Chapter7Test do
     Chapter7.each(["some", "example", "for", "you"], fn(x) -> IO.puts x end)
   end
 
+  test "all?" do
+    assert Chapter7.all?([2, 4, 6], fn(x) -> rem(x, 2) == 0 end) == true
+    assert Chapter7.all?([2, 3, 4], fn(x) -> rem(x, 2) == 0 end) == false
+  end
+
 end
