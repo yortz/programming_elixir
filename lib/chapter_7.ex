@@ -16,4 +16,7 @@ defmodule Chapter7 do
   def caesar([], _n), do: []
   def caesar([ head | tail ], n) when head+n <= 122, do: [ head+n | caesar(tail, n) ]
   def caesar([ head | tail ], n), do: [ head+n-26 | caesar(tail, n)]
+
+  def each([], _func), do: []
+  def each([head|tail], func), do: [ func.(head) | each(tail, func) ]
 end

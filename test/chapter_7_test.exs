@@ -19,4 +19,8 @@ defmodule Chapter7Test do
     assert Chapter7.caesar('ryvkve', 13) == 'elixir'
   end
 
+  test "each" do
+    Chapter7.each(["some", "example", "for", "you"], fn(x) -> IO.puts x end)
+  end
+
 end
