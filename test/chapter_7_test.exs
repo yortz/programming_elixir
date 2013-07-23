@@ -28,4 +28,8 @@ defmodule Chapter7Test do
     assert Chapter7.all?([2, 3, 4], fn(x) -> rem(x, 2) == 0 end) == false
   end
 
+  test "filter" do
+    assert Chapter7.filter([1, 2, 3], fn(x) -> rem(x, 2) == 0 end) == [2]
+  end
+
 end
