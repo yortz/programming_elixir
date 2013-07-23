@@ -37,6 +37,25 @@ defmodule Chapter7 do
       filter(tail, func)
     end
   end
+
+  def calculate_taxes([], _taxes), do: []
+  def calculate_taxes([head|tail], taxes) do
+    [check_location(head, taxes) | calculate_taxes(tail, taxes)]
+  end
+
+  defp check_location(order, taxes) do
+    if Keyword.get(order, :ship_to) in Keyword.keys(taxes) do
+      order ++ [total_amount: calculate_amount(order, taxes)]
+    else
+      order ++ [total_amount: 0]
+    end
+  end
+
+  defp calculate_amount(order, taxes) do
+    location = Keyword.get(order, :ship_to)
+    Keyword.get(taxes, location) + Keyword.get(order, :net_amount)
+  end
+
 end
 
 
