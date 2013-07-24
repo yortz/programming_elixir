@@ -32,6 +32,10 @@ defmodule Chapter7Test do
     assert Chapter7.filter([1, 2, 3], fn(x) -> rem(x, 2) == 0 end) == [2]
   end
 
+  test "prime numbers list from 2 to n" do
+    assert Chapter7.get_prime(10) == [3,5,7,9]
+  end
+
   test "calculate taxes" do
     orders = [
     [ id: 123, ship_to: :NC, net_amount: 100.00 ],

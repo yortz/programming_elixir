@@ -38,6 +38,10 @@ defmodule Chapter7 do
     end
   end
 
+  def get_prime(n) do
+    lc prime inlist Enum.to_list((2..n)), rem(prime, 2)  == 1, do: prime
+  end
+
   def calculate_taxes([], _taxes), do: []
   def calculate_taxes([head|tail], taxes) do
     [check_location(head, taxes) | calculate_taxes(tail, taxes)]
